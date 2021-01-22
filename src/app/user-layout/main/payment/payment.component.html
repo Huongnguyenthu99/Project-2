@@ -1,0 +1,70 @@
+<div class="main">
+    <h3>Thông tin thanh toán</h3>
+    <form [formGroup]="paymentInfo">
+        <div class="form-group">
+            <div class="col-md-3">Họ Tên</div>
+            <div class="col-md-9">
+                <input nz-input formControlName="fullName"/>
+            </div>
+            <div class="message-required" *ngIf="submitted && f.fullName.errors">
+                <div *ngIf="f.fullName.errors.required">*Họ tên là bắt buộc</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">Số điện thoại</div>
+            <div class="col-md-9">
+                <input nz-input formControlName="phoneNumber"/>
+            </div>
+            <div class="message-required" *ngIf="submitted && f.phoneNumber.errors">
+                <div *ngIf="f.phoneNumber.errors.required">*SĐT là bắt buộc</div>
+                <div *ngIf="f.phoneNumber.errors.minlength">*SĐT phải có 10 chữ số</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">Tỉnh/Thành phố</div>
+            <div class="col-md-9">
+                <nz-select formControlName="province" nzAllowClear nzShowSearch nzPlaceHolder="Chọn tỉnh thành">
+                    <nz-option *ngFor="let td of listProvince" nzLabel="{{td.state_name}}" nzValue="td.state_name"></nz-option>
+                </nz-select>
+            </div>
+            <div class="message-required" *ngIf="submitted && f.province.errors">
+                <div *ngIf="f.province.errors.required">*Tỉnh/Thành phố là bắt buộc</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">Địa chỉ cụ thể</div>
+            <div class="col-md-9">
+                <input nz-input formControlName="address"/>
+            </div>
+            <div class="message-required" *ngIf="submitted && f.address.errors">
+                <div *ngIf="f.address.errors.required">*Địa chỉ là bắt buộc</div>
+            </div>
+        </div>
+    </form>
+    <h3>Thông tin sản phẩm</h3>
+    <nz-table #table [nzData]="listItem" [nzShowPagination]="false">
+        <thead>
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of table.data">
+                <td>{{item.product.productName}}</td>
+                <td>{{item.product.price|currency:"VND"}}</td>
+                <td>{{item.count}}</td>
+                <td>{{item.count*item.product.price|currency:"VND"}}</td>
+            </tr>
+            <tr>
+                <td>Tổng số tiền</td>
+                <td></td>
+                <td></td>
+                <td>{{total|currency:"VND"}}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+    <button nz-button nzType="primary" (click)="getOrder()">Đặt hàng</button>
+</div>

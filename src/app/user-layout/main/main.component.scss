@@ -1,0 +1,35 @@
+.body{
+    margin-top: 120px;
+}
+img{
+    width: 100%;
+}
+.container{
+    //padding: 40px 0px;
+}
+.list-product{
+    //padding: 0px 15px;
+}
+.product-image-wrapper {
+    //border: 1px solid #00000040;
+    overflow: hidden;
+    margin-bottom: 30px;
+    height: 400px;
+    outline: none;
+}
+.col-md-4{
+    float: left;
+}
+.slide-image{
+    margin-bottom: 20px;
+    img{
+        height: 500px;
+        object-fit: cover;
+    }
+}
+.main{
+    //position: relative;
+    width: 100%;
+    top: 100px;
+    padding: 20px;
+}

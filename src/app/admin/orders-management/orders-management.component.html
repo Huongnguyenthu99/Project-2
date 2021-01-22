@@ -1,0 +1,59 @@
+<div class="title-top">
+    <h2 class="title">Quản lý đơn hàng</h2>
+</div>
+<div class="content">
+    <div class="button-top">
+        <div class="search">
+            <input [(ngModel)]="textSearch" nz-input placeholder="Tìm kiếm theo tên sản phẩm"/>
+            <i nz-icon nzType="search" nzTheme="outline"></i>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="showModal()">
+            <i nz-icon nzType="plus-circle" nzTheme="outline"></i>Thêm
+        </button>
+    </div>
+    <div>
+        <nz-table #tableBasic [nzData]="lstOrder" [nzScroll]="{y: '300px'}" [nzShowPagination]="true" [nzPageSize]="10">
+            <thead>
+                <tr>
+                    <!-- <th>Tên sản phẩm</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Phân loại</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Đã bán</th>
+                    <th>Thông tin</th>
+                    <th>Action</th> -->
+                    <th>Tên khách hàng</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Đơn hàng</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr *ngFor="let prod of lstOrder" (dblclick)="editProduct(prod)">
+                    <td>{{prod.products.productName}}</td>
+                    <td>{{prod.products.productCode}}</td>
+                    <td>{{prod.products.category.name}}</td>
+                    <td>{{prod.products.amount}}</td> 
+                    <td>{{prod.products.price|currency: "VND"}}</td>
+                    <td></td>
+                    <td><a>Xem thêm</a></td>
+                    <td>{{prod.description}}</td>
+                    <td>
+                        <a (click)="showConfirm(prod.products.id)">
+                            <i nz-icon nzType="delete" nzTheme="outline"></i>
+                        </a>
+                    </td>
+                </tr> -->
+                <tr *ngFor="let cus of lstOrder">
+                    <td>{{cus.customer.fullName}}</td>
+                    <td>{{cus.customer.phoneNum}}</td>
+                    <td>{{cus.customer.address}}</td>
+                    <td>Xem thêm</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </nz-table>
+    </div>
+</div>

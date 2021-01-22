@@ -1,0 +1,58 @@
+.top-bar{
+    padding: 20px;
+    height: 120px;
+    background: black;
+    color: #fff;
+}
+.title{
+    float: left;
+}
+.signup-icon{
+    float: right;
+    a{
+        margin-left: 20px;
+    }
+    i{
+        font-size: 30px;
+        margin-right: 3px;
+    }
+}
+i{
+    color: #fff;
+    vertical-align: 4px !important;
+    margin-right: 3px;
+}
+.title-bar{
+    height: 50px;
+    border-bottom: 1px solid #fff;
+}
+.home{
+    color: #fff;
+    
+}
+.eachItem{
+    height: 40px;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+ul{
+    display: flex;
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 0px;
+    li{
+        margin-right: 20px;
+        a{
+            font-size: 16px;
+        }
+    }
+}
+.selection{
+    i{
+        font-size: 20px;
+    }
+}

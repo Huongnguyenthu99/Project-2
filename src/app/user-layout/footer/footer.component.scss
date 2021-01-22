@@ -1,0 +1,35 @@
+.containers{
+    //position: fixed;
+    bottom: 0px;
+    width: 100%;
+    font-size: 18px;
+    background: #121516;
+    color: #87888a;
+    padding: 40px 0 0;
+}
+.site-info{
+    padding: 0 0 60px;
+    text-align: center;
+    font-size: 16px;
+}
+ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    color: #fff;
+    i{
+        vertical-align: 0px;
+        margin-right: 5px;
+        font-size: 20px;
+    }
+    li{
+        margin-right: 20px;
+    }
+}
+.site-copyright{
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+}
+.inner-wrap{
+    
+}

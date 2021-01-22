@@ -1,0 +1,26 @@
+<div class="main-detail containers" *ngIf="product">
+    <div class="product">
+        <div class="col-md-5 customCol">
+            <div class="image-main">
+                <img src="../../../assets/image/ao.jfif"/>
+            </div>
+            <div class="image-descript"></div>
+        </div>
+        <div class="col-md-7 customCol">
+            <div class="detail-Info">
+                <h3 class="product-name">{{product.productName}}</h3>
+                <p class="product-price">{{product.price|currency:"VND"}}</p>
+            </div>
+            <div class="button">
+                <button class="btn btn-primary" type="submit" (click)="addToCart()">
+                    <i nz-icon nzType="plus-circle" nzTheme="outline"></i>Thêm vào giỏ
+                </button>
+                <button class="btn btn-danger" type="submit" (click)="buyNow()">Mua ngay</button>
+            </div>
+        </div>
+    </div>
+    <div class="description col-md-12">
+        <h4 class="des-title" >Mô tả sản phẩm</h4>
+        <textarea disabled>{{product.description}}</textarea>
+    </div>
+</div>

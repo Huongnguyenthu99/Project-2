@@ -1,0 +1,33 @@
+// app-chatbot{
+//     position: fixed;
+//     bottom: 0px;
+//     right: 0px;
+//     z-index: 1000;
+// }
+// app-top-bar{
+//     position: fixed;
+//     top: 0px;
+//     z-index: 2000;
+//     width: 100%;
+//     //overflow: hidden;
+// }
+app-main{
+    //margin-top: 120px;
+    width: 100%;
+}
+app-footer{
+    //position: relative;
+    //bottom: 0px;
+    
+    width: 100%;
+}
+.layout-user{
+    //margin-top: 120px;
+    height: 100%;
+    width: 100%;    
+}
+router-outlet{
+    //margin-top: 120px;
+    width: 100%;
+    //min-height: 400px;
+}

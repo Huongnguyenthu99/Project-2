@@ -1,0 +1,52 @@
+<div class="top-bar">
+    <div class="title-bar">
+        <div class="title">
+            <a [routerLink]="['/main']" routerLinkActive="router-link-active">
+                <h4 class="home">Cana Fashion</h4>
+            </a>
+        </div>
+        <div class="signup-icon" nz-tooltip [nzTooltipTitle]="viewCart">
+            <!-- <a><i nz-icon nzType="user" nzTheme="outline"></i>Sign In</a>
+            <a class="sign-up">
+                <i nz-icon nzType="form" nzTheme="outline"></i>Sign Up
+            </a> -->
+            <nz-badge [nzCount]="listItemCart.length" (click)="goToCart()">
+                <span style="color: #fff; font-size: 20px; margin-right: 5px;">Giỏ hàng</span>
+                <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+            </nz-badge>
+        </div>
+        
+    </div>
+    <div class="search">
+        <div class="selection">
+            <ul>
+                <li>
+                    <a [routerLink]="['/main']" >
+                        <i nz-icon nzType="home" nzTheme="outline"></i>Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i nz-icon nzType="bold" nzTheme="outline"></i>Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i nz-icon nzType="user" nzTheme="outline"></i>About us
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="input-search"></div>
+    </div>
+</div>
+<!-- tooltip when hover cart -->
+<ng-template #viewCart>
+    <ul>
+        <li class="eachItem" *ngFor="let item of listItemCart">
+            <div class="right">Số lượng: {{item.count}}</div>
+            <div class="left">{{item.product.ProductName}}</div>
+            <div class="right">{{item.product.Price|currency:"VND"}}</div>
+        </li>
+    </ul>
+</ng-template>

@@ -1,0 +1,23 @@
+<div class="chat-bot">
+    <div class="top">
+        <p>ChatBot</p>
+        <div class="hideBot">
+            <i nz-icon nzType="minus" nzTheme="outline"></i>
+        </div>
+    </div>
+    <div class="content">
+        <div *ngFor="let message of listMessage">
+            <div *ngIf="message.sender; then user else bot"></div>
+            <ng-template #bot>
+                <p class="response" dir="ltr">{{message.text}}</p>
+            </ng-template>
+            <ng-template #user>
+                <p class="request" dir="rtl">{{message.message}}</p>
+            </ng-template>
+        </div>
+    </div>
+    <div class="footer">
+        <input [(ngModel)]="request" (keyup.enter)="chatWithBot()" placeholder="Enter your message..." />
+        <button (click)="chatWithBot()" class="enter-message" type="submit">Gửi</button>
+    </div>
+</div>

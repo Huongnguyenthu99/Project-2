@@ -1,0 +1,15 @@
+{
+    "/api/*": {
+        "target": "https://localhost:44300",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    },
+    "/webhooks/*": {
+        "target": "http://localhost:5005",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "rejectUnauthorized": false
+    }
+}

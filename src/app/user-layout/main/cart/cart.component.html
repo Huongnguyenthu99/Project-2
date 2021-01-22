@@ -1,0 +1,42 @@
+<div class="main" *ngIf="listItemCart">
+    <!-- <ul>
+        <li class="eachItem" *ngFor="let item of listItemCart">
+            <div class="left">{{item.product.productName}}</div>
+            <div class="right">{{item.product.price}}</div>
+            <div class="right">{{item.count}}</div>
+        </li>
+    </ul> -->
+    <h3>Giỏ hàng</h3>
+    <nz-table #tableCart [nzData]="listItemCart" nzShowPagination="false">
+        <thead>
+            <tr>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Thành Tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pro of tableCart.data">
+                <td>{{pro.product.productName}}</td>
+                <td>{{pro.product.price|currency:"VND"}}</td>
+                <td>
+                    <nz-input-group >
+                        <!-- <input type="text" [(ngModel)]=""/> -->
+                    </nz-input-group>
+                    <button type="submit" (click)="addItem(pro)">+</button>
+                    <span>{{pro.count}}</span>
+                    <button type="submit" (click)="removeItem(pro)"> - </button>
+                </td>
+                <td>{{pro.product.price*pro.count|currency:"VND"}}</td>
+            </tr>
+            <tr>
+                <td>Tổng</td>
+                <td></td>
+                <td></td>
+                <td>{{totalPrice|currency:"VND"}}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+    <button class="pay" nz-button nzType="primary" [routerLink]="['/payment']">Thanh Toán</button>
+</div>

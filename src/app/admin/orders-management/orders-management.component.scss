@@ -1,0 +1,25 @@
+.button-top{
+    height: 50px;
+}
+.search{
+    float: left;
+    input{
+        width: 200px
+    }
+}
+.button-top .btn-primary{
+    float: right;
+}
+.message-required{
+    color: red;
+}
+.rows {
+    margin-bottom: 10px;
+}
+span.col-md-3 {
+    padding: 0px;
+    font-weight: 500;
+}
+.ant-layout-content{
+    min-height: auto;
+}

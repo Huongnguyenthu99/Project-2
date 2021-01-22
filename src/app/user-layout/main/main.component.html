@@ -1,0 +1,29 @@
+<div class="main">
+    <div class="slide-image">
+        <img src="../../../assets/image/anhbia.jpg" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- <div class="col-md-3">
+                <h2>Category</h2>
+            </div> -->
+            <div class="">
+                <div class="col-md-4 list-product" *ngFor="let prod of listProduct">
+                    <div class="product-image-wrapper" [routerLink]="['/products', prod.id]">
+                        <div class="single-product">
+                            <div class="productInfo">
+                                <img src="../../../assets/image/ao.jfif">
+                                <h4>{{prod.category.name}}</h4>
+                                <p>{{prod.productName}}</p>
+                                <!-- <button class="btn-default" (click)="addToCart()">
+                                    Mua ngay
+                                </button> -->
+                                <h3>{{prod.price|currency:"VND"}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
